@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+h1{
+    font-size: 6rem;
+}
+p{
+    font-size: 1.8rem;
+}
+.app{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+}
+.app:before{
+    content:'';
+    background: url('./assests/background.jpg') no-repeat center center/cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.container{
+    max-width: 700px;
+    height: 480px;
+    margin: auto;
+    padding: 0 1rem;
+    position: relative;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.app .search{
+    text-align: center;
+    padding-top: .8rem;
+    
+   
+}
+.search input{
+   border: 1px solid rgba(255,255,255,1);
+   outline: none;
+    border-radius: 1rem ;
+    padding: 8px 10px;
+    background: none;
+    color: white;
+    font-size:1rem;
+    text-align: center;
+}
+input:focus{
+    background: rgba(0,0,0,.3);
+    outline:none ;
+    border: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app .top{
+    width: 100%;
+    margin:1rem auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app .subTop{
+    
+    display: flex;
+    justify-content: space-between;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app .description{
+    position: relative;
+    margin-top: 1rem;
+    /* left: 80%; */
+    /* transform-origin: 0 0;
+    transform: rotate(270deg); */
 }
-
-.App-link {
-  color: #61dafb;
+.app .bottom{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 1rem;
+    background: rgba(255,255,255,.3);
+    border-radius: 15px;
+   
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bottom>div{
+    height: 100%; 
+}
+.bold{
+    font-weight: 1000;
 }
