@@ -5,9 +5,9 @@ import axios from 'axios';
 
 function App() {
   const [data,setDate]=useState({});
-  const [location,setLocation]=useState('mumbai');
+  const [location,setLocation]=useState('');
 
-  const url=`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=e2762bec35846609a015787a6526caa8`;
+  const url=`https://api.openweathermap.org/data/2.5/weather?q=${location ||mumbai }&appid=e2762bec35846609a015787a6526caa8`;
    const searchLocation=(event)=>{
       if(event.key==='Enter'){
         axios.get(url).then((response)=>{
