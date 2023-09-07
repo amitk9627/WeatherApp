@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 
 import './App.css';
 import axios from 'axios';
@@ -6,13 +6,22 @@ import axios from 'axios';
 function App() {
   const [data,setDate]=useState({});
   const [location,setLocation]=useState('');
+  useEffect(()=->{
+     axios.get("https://api.openweathermap.org/data/2.5/weather?q=mumbai&appid=e2762bec35846609a015787a6526caa8" ).then((response)=>{
+          setDate(response.data);
+          //console.log(response.data)
+        })
+        setLocation('');
+    
+  },[])
+    
 
-  const url= location ? `https://api.openweathermap.org/data/2.5/weather?q=${ location  }&appid=e2762bec35846609a015787a6526caa8` : `https://api.openweathermap.org/data/2.5/weather?q=mumbai&appid=e2762bec35846609a015787a6526caa8` ;
+  const url= `https://api.openweathermap.org/data/2.5/weather?q=${ location  }&appid=e2762bec35846609a015787a6526caa8` ;
    const searchLocation=(event)=>{
       if(event.key==='Enter'){
         axios.get(url).then((response)=>{
           setDate(response.data)
-          console.log(response.data)
+          //console.log(response.data)
         })
         setLocation('');
       }
